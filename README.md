@@ -8,6 +8,49 @@ Structure and section flow follow the brief provided by the client
 (reference: `vertexstack.io`) — hero, about, services, portfolio, tech stack, process,
 differentiators, testimonials, contact, FAQ, CTA.
 
+## Screenshots
+
+Captured from a production build at 1440×900 desktop and 390×844 mobile. Regenerate them
+after any visual change:
+
+```bash
+npm run build && npm run start -- -p 3210   # in one shell
+npm i --no-save playwright-core             # drives your installed Chrome, no download
+node scripts/screenshots.mjs                # in another
+```
+
+### Home
+
+![Home hero](screenshots/hero.png)
+
+### Services — the eight areas
+
+![Services section](screenshots/services.png)
+
+### Portfolio and case study
+
+| Portfolio section | Case study detail |
+| --- | --- |
+| ![Portfolio](screenshots/portfolio.png) | ![Case study](screenshots/case-study.png) |
+
+### Process and contact
+
+| Process | Contact |
+| --- | --- |
+| ![Process](screenshots/process.png) | ![Contact](screenshots/contact.png) |
+
+### Contact form states
+
+| Validation errors | Submitted |
+| --- | --- |
+| ![Contact form errors](screenshots/contact-errors.png) | ![Contact form success](screenshots/contact-success.png) |
+
+### Mobile
+
+| Hero | Services |
+| --- | --- |
+| <img src="screenshots/mobile-hero.png" width="320" alt="Mobile hero"> | <img src="screenshots/mobile-services.png" width="320" alt="Mobile services"> |
+
 ## Stack
 
 - **Next.js 15** (App Router, React 19, server components by default)

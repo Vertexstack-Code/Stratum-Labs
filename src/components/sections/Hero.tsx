@@ -26,7 +26,7 @@ export function Hero() {
 
           <h1 className="heading-1 mt-6 animate-fade-up">
             Design and engineering partner for{' '}
-            <span className="text-brand-600">founders shipping SaaS, marketplaces, AI and native mobile apps</span>
+            <span className="text-brand-600">founders shipping SaaS, marketplaces, AI and mobile apps</span>
           </h1>
 
           <p className="body-large mx-auto mt-6 max-w-2xl">
