@@ -100,6 +100,33 @@ Everything editable is in `src/content/`:
 | `faq.ts` | FAQ accordion (also feeds FAQPage structured data) |
 | `posts.ts` | Blog posts |
 
+### Portfolio screenshots
+
+Each project can carry a real screenshot of the shipped product, rendered in a browser
+frame on the portfolio card and at the top of its case study:
+
+```ts
+// src/content/projects.ts
+screenshot: { src: '/work/casaba.png', alt: 'Casaba search results with map view' },
+```
+
+Capture it from the live site — the script writes `public/work/<slug>.png` at the 16:10
+the frame expects:
+
+```bash
+npm i --no-save playwright-core
+node scripts/capture-work.mjs casaba=https://casaba.example tradeloop=https://tradeloop.example
+# --wait=3000 for heavy SPAs, --full for full-page, --dismiss=".cookie-banner" to click consent away
+```
+
+Projects without a `screenshot` render exactly as before, so the field can be filled in
+one project at a time.
+
+> The portfolio is headed **"Shipped work — not mockups."** Only point `screenshot` at a
+> product we actually built and have permission to show. A screenshot of someone else's
+> site under that heading is a false claim about our work, and it is trivially
+> reverse-image-searched.
+
 ## Rebranding checklist
 
 1. `src/content/site.ts` — name, legal name, tagline, description, contact details, social links.

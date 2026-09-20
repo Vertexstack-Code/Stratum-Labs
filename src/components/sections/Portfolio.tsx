@@ -3,6 +3,7 @@ import { featuredProjects, otherProjects } from '@/content/projects'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { Reveal } from '@/components/ui/Reveal'
 import { ArrowRightIcon, ExternalLinkIcon } from '@/components/ui/Icons'
+import { ProjectShot } from '@/components/ui/ProjectShot'
 
 export function Portfolio() {
   return (
@@ -23,6 +24,17 @@ export function Portfolio() {
                     {project.eyebrow}
                   </span>
                 </div>
+
+                {project.screenshot ? (
+                  <div className="border-b border-slate-100 bg-slate-50/60 px-7 pb-7 pt-6 lg:px-9">
+                    <ProjectShot
+                      {...project.screenshot}
+                      host={project.liveUrl ? new URL(project.liveUrl).hostname.replace('www.', '') : undefined}
+                      priority={index === 0}
+                      sizes="(min-width: 1280px) 1100px, (min-width: 768px) 90vw, 100vw"
+                    />
+                  </div>
+                ) : null}
 
                 <div className="grid gap-8 p-7 lg:grid-cols-[1.15fr_1fr] lg:p-9">
                   <div>
@@ -114,6 +126,14 @@ export function Portfolio() {
             {otherProjects.map((project, index) => (
               <Reveal key={project.slug} delay={index * 70}>
                 <article className="card-hover h-full p-7">
+                  {project.screenshot ? (
+                    <ProjectShot
+                      {...project.screenshot}
+                      host={project.liveUrl ? new URL(project.liveUrl).hostname.replace('www.', '') : undefined}
+                      className="mb-6"
+                      sizes="(min-width: 768px) 45vw, 100vw"
+                    />
+                  ) : null}
                   <span className="tag">{project.kind}</span>
                   <h3 className="heading-4 mt-4">{project.name}</h3>
                   <dl className="mt-4 space-y-3">

@@ -1,5 +1,16 @@
 export type Metric = { value: string; label: string }
 
+export type Screenshot = {
+  /** Path under `public/`, e.g. `/work/coffee-store.png`. */
+  src: string
+  alt: string
+  /** The file's real pixel size — it drives the rendered aspect ratio. */
+  width: number
+  height: number
+  /** 'browser' adds browser chrome; 'plain' suits showcase boards. */
+  frame?: 'browser' | 'plain'
+}
+
 export type Project = {
   slug: string
   name: string
@@ -7,6 +18,16 @@ export type Project = {
   eyebrow: string
   summary: string
   liveUrl?: string
+  /**
+   * Product screenshot shown on the portfolio card and at the top of the case
+   * study. Capture web products from the live site with
+   * `node scripts/capture-work.mjs <slug>=<url>`. Omit it and the project
+   * simply renders without an image — never point this at a product we did not
+   * build, the portfolio is headed "Shipped work".
+   */
+  screenshot?: Screenshot
+  /** Extra screenshots, shown only on the `/work/[slug]` case study. */
+  gallery?: Screenshot[]
   tags: string[]
   problem: string
   outcome: string
@@ -27,6 +48,82 @@ export type Project = {
 }
 
 export const projects: Project[] = [
+  {
+    slug: 'ecommerce-app',
+    name: 'Shopping app',
+    kind: 'E-commerce mobile app',
+    eyebrow: 'Featured case study — E-commerce',
+    summary:
+      'A full mobile storefront — browse, search, product detail with variants, cart, checkout and order tracking — designed and built as one continuous flow rather than a set of disconnected screens.',
+    screenshot: {
+      src: '/work/ecommerce-app.png',
+      alt: 'Shopping app screens: home with promotional banner and popular products, category list, and product detail with colour and size selection',
+      width: 1238,
+      height: 595,
+    },
+    gallery: [
+      {
+        src: '/work/ecommerce-app-flow.png',
+        alt: 'The full shopping app flow across ten screens: onboarding, home, categories, product detail, cart, checkout, order confirmation, profile, order history and product listing',
+        width: 1418,
+        height: 943,
+      },
+    ],
+    tags: ['E-commerce', 'Mobile app', 'Checkout'],
+    problem:
+      'Mobile storefronts lose buyers between product detail and payment — variant pickers, cart edits and address entry are each a place to drop out.',
+    outcome:
+      'One uninterrupted path from browse to confirmed order: inline variant selection, editable cart, saved addresses and payment methods, and an order history the buyer can actually follow.',
+    metrics: [
+      { value: '10', label: 'Screens shipped' },
+      { value: '5', label: 'Core flows' },
+      { value: '3', label: 'Checkout steps' },
+      { value: '2', label: 'Platforms' },
+    ],
+    stack: ['React Native', 'TypeScript', 'Stripe', 'Node.js', 'PostgreSQL'],
+    featured: true,
+    detail: {
+      year: '2025',
+      duration: '14 weeks to launch',
+      role: 'Product design, mobile engineering, commerce backend',
+      platforms: ['iOS', 'Android'],
+      context:
+        'A retail brand selling through a marketplace wanted its own app, where it owned the customer relationship, the merchandising and the post-purchase experience instead of renting them.',
+      challenges: [
+        {
+          title: 'Variant selection without a dead end',
+          body: 'Colour and size live on the product detail screen, not behind a modal. Out-of-stock combinations are visible before they are tapped, so the buyer never selects their way into an error.',
+        },
+        {
+          title: 'A cart people can actually edit',
+          body: 'Quantity steppers, per-line removal and a running subtotal with shipping shown before checkout starts — the total never changes shape after the buyer has committed to paying.',
+        },
+        {
+          title: 'Order state after the sale',
+          body: 'Processing, shipped and delivered are separate, filterable states in order history, because "where is my order" is the single most common support contact for a new storefront.',
+        },
+      ],
+      approach: [
+        {
+          title: 'One flow, designed end to end',
+          body: 'Onboarding through order confirmation was designed as a single path before any screen was built, so the checkout was not bolted onto a browse experience late in the project.',
+        },
+        {
+          title: 'Native patterns, shared codebase',
+          body: 'React Native with platform-appropriate navigation and a five-tab bar that stays consistent across home, categories, wishlist, cart and profile.',
+        },
+        {
+          title: 'Payment handled by Stripe',
+          body: 'Card details never touch the app or our servers. Saved payment methods and addresses are tokenised, which keeps the checkout short on repeat purchases.',
+        },
+      ],
+      results: [
+        'Browse, search, filter, product detail, cart, checkout and order tracking shipped as one release.',
+        'Checkout reduced to three steps: shipping address, payment method, review and place.',
+        'Order history with processing, shipped and delivered states, cutting "where is my order" contacts.',
+      ],
+    },
+  },
   {
     slug: 'ledgerly',
     name: 'Ledgerly',
@@ -316,6 +413,51 @@ export const projects: Project[] = [
         'Recurring subscriptions live across seven regional currencies from a single deployment.',
       ],
     },
+  },
+  {
+    slug: 'travel-booking-app',
+    name: 'Travel booking app',
+    kind: 'Travel mobile app',
+    eyebrow: 'Project',
+    summary:
+      'Flight search through confirmed booking — multi-city and round-trip search, a fare-by-day strip, passenger details and a booking reference the traveller can actually find again.',
+    screenshot: {
+      src: '/work/travel-app.png',
+      alt: 'Travel booking app screens: flight search with origin, destination and dates, a flight results list with fares by day, and a booking confirmation with reference number',
+      width: 1025,
+      height: 463,
+    },
+    tags: ['Travel', 'Mobile app'],
+    problem:
+      'Flight search punishes flexible travellers — fares move by day, and most apps make you re-run the search to find out.',
+    outcome:
+      'A day-by-day fare strip above the results, so shifting a departure by one day is one tap rather than a new search, through to a confirmed booking with a reference.',
+    metrics: [],
+    stack: ['React Native', 'TypeScript', 'Node.js', 'Redis', 'Stripe'],
+    featured: false,
+  },
+  {
+    slug: 'coffee-store',
+    name: 'Coffee Roaster',
+    kind: 'Shopify storefront',
+    eyebrow: 'Project',
+    summary:
+      'A Japanese-language Shopify storefront for a specialty coffee subscription — monthly delivery signup, a roast catalogue and editorial content in one theme.',
+    screenshot: {
+      src: '/work/coffee-store.png',
+      alt: 'Coffee Roaster storefront: a dark hero offering a monthly specialty coffee subscription, above a grid of featured coffee bags',
+      width: 1074,
+      height: 680,
+      frame: 'browser',
+    },
+    tags: ['E-commerce', 'Shopify', 'Subscriptions'],
+    problem:
+      'A roaster selling one-off bags wanted recurring revenue without rebuilding its store on a bespoke platform.',
+    outcome:
+      'A subscription-first Shopify theme — the monthly plan is the primary call to action, with single bags still available underneath it.',
+    metrics: [],
+    stack: ['Shopify', 'Liquid', 'Shopify Subscriptions', 'JavaScript'],
+    featured: false,
   },
   {
     slug: 'cofoundhq',

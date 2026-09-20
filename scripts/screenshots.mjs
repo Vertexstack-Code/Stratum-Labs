@@ -74,7 +74,7 @@ async function section(page, name, sel) {
 }
 
 for (const [name, path] of [
-  ['case-study', '/work/ledgerly'],
+  ['case-study', '/work/ecommerce-app'],
   ['work-index', '/work'],
 ]) {
   const { ctx, page } = await open(path)

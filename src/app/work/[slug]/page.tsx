@@ -4,6 +4,7 @@ import { caseStudies, getProject } from '@/content/projects'
 import { pageMetadata } from '@/lib/seo'
 import { CtaBanner } from '@/components/sections/CtaBanner'
 import { ArrowRightIcon, ExternalLinkIcon } from '@/components/ui/Icons'
+import { ProjectShot } from '@/components/ui/ProjectShot'
 
 type Params = { params: Promise<{ slug: string }> }
 
@@ -83,6 +84,19 @@ export default async function CaseStudyPage({ params }: Params) {
           </div>
         </header>
 
+        {project.screenshot ? (
+          <div className="border-b border-slate-200 bg-slate-50">
+            <div className="container-custom pb-14 lg:pb-20">
+              <ProjectShot
+                {...project.screenshot}
+                host={project.liveUrl ? new URL(project.liveUrl).hostname.replace('www.', '') : undefined}
+                priority
+                sizes="(min-width: 1280px) 1200px, 100vw"
+              />
+            </div>
+          </div>
+        ) : null}
+
         <div className="container-custom py-14 lg:py-20">
           <div className="grid gap-12 lg:grid-cols-[1fr_18rem] lg:gap-16">
             <div className="max-w-3xl space-y-14">
@@ -115,6 +129,17 @@ export default async function CaseStudyPage({ params }: Params) {
                   ))}
                 </div>
               </section>
+
+              {project.gallery?.length ? (
+                <section>
+                  <h2 className="heading-3">Screens</h2>
+                  <div className="mt-6 space-y-6">
+                    {project.gallery.map((shot) => (
+                      <ProjectShot key={shot.src} {...shot} sizes="(min-width: 1024px) 720px, 100vw" />
+                    ))}
+                  </div>
+                </section>
+              ) : null}
 
               <section>
                 <h2 className="heading-3">Outcome</h2>
