@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --header-height: 4.5rem;
+  }
+
+  * {
+    @apply border-slate-200;
+  }
+
+  html {
+    @apply scroll-smooth antialiased;
+  }
+
+  body {
+    @apply bg-white text-slate-600 font-sans;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-brand-600/15 text-brand-900;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand-600 ring-offset-2 ring-offset-white;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply mx-auto w-full max-w-container px-6 sm:px-8 lg:px-12;
+  }
+
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .section-header-mb {
+    @apply mb-10 sm:mb-14 lg:mb-16;
+  }
+
+  .scroll-anchor {
+    @apply scroll-mt-24;
+  }
+
+  .heading-1 {
+    @apply font-display text-4xl font-bold leading-[1.05] tracking-tight text-slate-900 sm:text-5xl lg:text-6xl;
+  }
+
+  .heading-2 {
+    @apply font-display text-3xl font-semibold leading-[1.1] tracking-tight text-slate-900 sm:text-4xl lg:text-5xl;
+  }
+
+  .heading-3 {
+    @apply font-display text-2xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-3xl;
+  }
+
+  .heading-4 {
+    @apply font-display text-lg font-semibold leading-snug text-slate-900;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.1em] text-brand-600 sm:text-sm;
+  }
+
+  .body-large {
+    @apply text-lg leading-relaxed text-slate-600;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-6 py-2.5 text-base font-semibold transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-primary {
+    @apply btn bg-brand-600 text-white shadow-card hover:bg-brand-700;
+  }
+
+  .btn-secondary {
+    @apply btn border border-slate-300 bg-white text-slate-900 shadow-card hover:border-slate-400 hover:bg-slate-50;
+  }
+
+  .btn-ghost {
+    @apply btn px-0 text-brand-600 hover:text-brand-700;
+  }
+
+  .card {
+    @apply rounded-xl border border-slate-200 bg-white shadow-card transition-all duration-200;
+  }
+
+  .card-hover {
+    @apply card hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-card-hover;
+  }
+
+  .tag {
+    @apply inline-flex items-center rounded-md border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-600;
+  }
+
+  .tag-brand {
+    @apply inline-flex items-center rounded-md border border-brand-200 bg-brand-50 px-2.5 py-1 text-xs font-medium text-brand-700;
+  }
+
+  .field-label {
+    @apply mb-1.5 block text-sm font-medium text-slate-900;
+  }
+
+  .field {
+    @apply w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-base text-slate-900 shadow-sm transition-colors placeholder:text-slate-400 hover:border-slate-400 focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-600/20;
+  }
+
+  .divider-dot::after {
+    content: '·';
+    @apply mx-2 text-slate-300;
+  }
+
+  /*
+   * Reveal-on-scroll. The hidden state only applies once the inline script in
+   * the root layout has marked the document as JS-capable, so content is never
+   * stuck at opacity 0 for no-JS visitors or crawlers.
+   */
+  .js .reveal[data-reveal='out'] {
+    @apply translate-y-4 opacity-0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .js .reveal[data-reveal='out'] {
+      @apply translate-y-0 opacity-100;
+    }
+  }
+
+  .grid-backdrop {
+    background-image: linear-gradient(to right, rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+  }
+}
