@@ -1,0 +1,14 @@
+{
+  "/icon.svg/route": "/icon.svg",
+  "/robots.txt/route": "/robots.txt",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/api/contact/route": "/api/contact",
+  "/_not-found/page": "/_not-found",
+  "/page": "/",
+  "/privacy/page": "/privacy",
+  "/terms/page": "/terms",
+  "/blog/[slug]/page": "/blog/[slug]",
+  "/blog/page": "/blog",
+  "/work/page": "/work",
+  "/work/[slug]/page": "/work/[slug]"
+}

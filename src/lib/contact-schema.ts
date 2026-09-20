@@ -7,6 +7,10 @@ export const projectTypes = [
   'Mobile app (iOS)',
   'Mobile app (Android)',
   'Mobile app (iOS + Android)',
+  'AI product / LLM feature',
+  'E-commerce store',
+  'Blockchain / Web3',
+  'Game / interactive',
   'Other',
 ] as const
 

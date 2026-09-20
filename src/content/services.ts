@@ -55,4 +55,52 @@ export const services: Service[] = [
     ],
     stack: ['Swift', 'Kotlin', 'React Native', 'Firebase', 'GraphQL'],
   },
+  {
+    id: 'ai',
+    title: 'AI products',
+    summary:
+      'LLM features that survive contact with real users — retrieval over your own data, agents wired to your systems, and evals that catch regressions before your customers do.',
+    highlights: [
+      'RAG over your data · vector search + reranking',
+      'Tool-calling agents wired into your APIs',
+      'Eval suites, guardrails, cost + latency budgets',
+    ],
+    stack: ['Claude API', 'OpenAI', 'Vercel AI SDK', 'pgvector', 'Python'],
+  },
+  {
+    id: 'ecommerce',
+    title: 'E-commerce',
+    summary:
+      'Headless storefronts and custom checkout flows — built for catalogue depth, conversion, and the operational reality of fulfilment.',
+    highlights: [
+      'Headless storefronts on Shopify or Medusa',
+      'Custom checkout, subscriptions, tax + shipping',
+      'ERP, PIM, and fulfilment integrations',
+    ],
+    stack: ['Next.js', 'Shopify Hydrogen', 'Medusa', 'Stripe', 'Algolia'],
+  },
+  {
+    id: 'blockchain',
+    title: 'Blockchain & Web3',
+    summary:
+      'Smart contracts and the products around them — written to be audited, tested against forked mainnet, and deployed with custody you actually control.',
+    highlights: [
+      'Solidity contracts · unit + mainnet-fork tests',
+      'Wallet auth, indexing, on-chain data pipelines',
+      'Audit preparation, upgrade + custody strategy',
+    ],
+    stack: ['Solidity', 'Foundry', 'viem', 'The Graph', 'EVM chains'],
+  },
+  {
+    id: 'games',
+    title: 'Games & interactive',
+    summary:
+      'Cross-platform games and real-time interactive experiences — from prototype to store release, with the backend and live-ops needed to keep them running.',
+    highlights: [
+      'Unity + WebGL builds · desktop, mobile, web',
+      'Authoritative multiplayer netcode + matchmaking',
+      'Accounts, in-game economy, and live-ops tooling',
+    ],
+    stack: ['Unity', 'C#', 'Godot', 'WebGL', 'Colyseus'],
+  },
 ]

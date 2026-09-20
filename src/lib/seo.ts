@@ -52,6 +52,10 @@ export function organizationJsonLd() {
       'Marketplace development',
       'Web application development',
       'Native mobile app development',
+      'AI and LLM product development',
+      'E-commerce development',
+      'Blockchain and Web3 development',
+      'Game development',
     ],
   }
 }

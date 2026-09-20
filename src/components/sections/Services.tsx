@@ -9,7 +9,7 @@ export function Services() {
       <div className="container-custom">
         <SectionHeader
           eyebrow="What we build"
-          title="Focused expertise in four areas."
+          title="Focused expertise across eight areas."
           description="Every engagement is led by senior engineers who have shipped at scale. No generalists, no handoffs to juniors, no offshore subcontracting."
         />
 

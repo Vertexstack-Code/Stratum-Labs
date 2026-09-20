@@ -26,12 +26,13 @@ export function Hero() {
 
           <h1 className="heading-1 mt-6 animate-fade-up">
             Design and engineering partner for{' '}
-            <span className="text-brand-600">founders shipping SaaS, marketplaces, and native mobile apps</span>
+            <span className="text-brand-600">founders shipping SaaS, marketplaces, AI and native mobile apps</span>
           </h1>
 
           <p className="body-large mx-auto mt-6 max-w-2xl">
-            We design, build, and ship web platforms and native iOS + Android apps for founders and product teams —
-            from discovery through launch and beyond. Senior engineers, weekly releases, no handoffs.
+            We design, build, and ship web platforms, AI products, storefronts, on-chain systems, games and native
+            iOS + Android apps — from discovery through launch and beyond. Senior engineers, weekly releases, no
+            handoffs.
           </p>
 
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">

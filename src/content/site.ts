@@ -5,9 +5,9 @@
 export const site = {
   name: 'Stratum Labs',
   legalName: 'Stratum Labs LLC',
-  tagline: 'SaaS, Marketplace & Mobile App Development',
+  tagline: 'SaaS, AI, Commerce & Mobile App Development',
   description:
-    'Design and engineering partner for SaaS platforms, two-sided marketplaces, and native iOS and Android apps. Shipping since 2017.',
+    'Design and engineering partner for SaaS, marketplaces, AI, e-commerce, blockchain, games and native iOS + Android apps. Shipping since 2017.',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.stratumlabs.io',
   foundedYear: 2017,
   availability: 'Accepting projects — Q2 2026',
@@ -42,6 +42,10 @@ export const footerNav = {
     { label: 'Marketplaces', href: '/#services' },
     { label: 'Web applications', href: '/#services' },
     { label: 'Native mobile apps', href: '/#services' },
+    { label: 'AI products', href: '/#services' },
+    { label: 'E-commerce', href: '/#services' },
+    { label: 'Blockchain & Web3', href: '/#services' },
+    { label: 'Games & interactive', href: '/#services' },
   ],
   company: [
     { label: 'About', href: '/#about' },

@@ -18,8 +18,8 @@ export function About() {
           <Reveal delay={80} className="flex flex-col justify-center">
             <p className="body-large">
               {site.name} is a senior-only engineering and design studio. We partner with founders and product teams
-              to design, build, and ship SaaS platforms, two-sided marketplaces, and native iOS + Android apps — from
-              discovery to launch and beyond.
+              to design, build, and ship SaaS platforms, two-sided marketplaces, AI products, e-commerce, blockchain
+              systems, games and native iOS + Android apps — from discovery to launch and beyond.
             </p>
             <p className="mt-4 leading-relaxed text-slate-600">
               Every project is led by the engineers writing the code — not account managers. We work in weekly release

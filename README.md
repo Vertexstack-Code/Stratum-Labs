@@ -1,7 +1,7 @@
 # Stratum Labs — agency website
 
 Marketing site for a design & engineering studio: SaaS platforms, two-sided marketplaces,
-web applications and native mobile apps. Built as a content-driven Next.js app so copy,
+web applications, native mobile apps, AI products, e-commerce, blockchain and games. Built as a content-driven Next.js app so copy,
 services, case studies and posts can be edited without touching components.
 
 Structure and section flow follow the brief provided by the client
@@ -49,7 +49,7 @@ Everything editable is in `src/content/`:
 | File | Controls |
 | --- | --- |
 | `site.ts` | Brand name, description, availability banner, email, phone, social links, all navigation |
-| `services.ts` | The four service cards |
+| `services.ts` | The eight service cards |
 | `projects.ts` | Portfolio — featured case studies (with full `/work/[slug]` detail), plus smaller projects |
 | `process.ts` | Five-step process, the four differentiators, headline stats |
 | `tech.ts` | Technology stack groups and the hero stack strip |
