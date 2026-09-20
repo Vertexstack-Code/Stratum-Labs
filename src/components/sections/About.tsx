@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import { site } from '@/content/site'
-import { stats } from '@/content/process'
 import { Reveal } from '@/components/ui/Reveal'
-import { Stat } from '@/components/ui/Stat'
 import { ArrowRightIcon } from '@/components/ui/Icons'
 
 export function About() {
@@ -37,14 +35,6 @@ export function About() {
             </div>
           </Reveal>
         </div>
-
-        <Reveal delay={120}>
-          <dl className="mt-14 grid grid-cols-2 gap-8 border-t border-slate-200 pt-10 lg:grid-cols-4">
-            {stats.map((stat) => (
-              <Stat key={stat.label} value={stat.value} label={stat.label} />
-            ))}
-          </dl>
-        </Reveal>
       </div>
     </section>
   )

@@ -1,14 +1,14 @@
 {
   "/_not-found/page": "/_not-found",
   "/icon.svg/route": "/icon.svg",
-  "/sitemap.xml/route": "/sitemap.xml",
   "/robots.txt/route": "/robots.txt",
+  "/sitemap.xml/route": "/sitemap.xml",
   "/api/contact/route": "/api/contact",
   "/page": "/",
-  "/terms/page": "/terms",
-  "/blog/page": "/blog",
-  "/blog/[slug]/page": "/blog/[slug]",
   "/privacy/page": "/privacy",
+  "/blog/[slug]/page": "/blog/[slug]",
+  "/blog/page": "/blog",
+  "/terms/page": "/terms",
   "/work/page": "/work",
   "/work/[slug]/page": "/work/[slug]"
 }
