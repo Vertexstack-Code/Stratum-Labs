@@ -131,6 +131,14 @@ export const projects: Project[] = [
     eyebrow: 'Featured case study — FinTech SaaS',
     summary:
       'Personal finance SaaS that turns daily spending awareness into long-term wealth — behavioral budgeting, AI insights, bank sync, and an offline-first installable PWA.',
+    screenshot: {
+      src: '/work/ledgerly.png',
+      alt:
+        'Ledgerly marketing site: a dark hero reading “Finance clarity for modern teams” beside the product dashboard, showing total balance, monthly revenue and expenses, a six-month cash-flow chart and a recent payments table',
+      width: 1513,
+      height: 1039,
+      frame: 'browser',
+    },
     tags: ['SaaS', 'FinTech', 'Progressive Web App'],
     problem:
       'Traditional budgeting apps track spending but do not change behavior. Small repeated “micro-splurges” quietly cost users thousands per year.',
@@ -206,6 +214,14 @@ export const projects: Project[] = [
     summary:
       'A trilingual (EN/FR/AR), dual-currency rental marketplace unifying short-term stays and vehicle rentals — real-time messaging, local payment rails, identity-verified hosts, and a role-based admin console.',
     liveUrl: 'https://example.com',
+    screenshot: {
+      src: '/work/casaba.png',
+      alt:
+        'Casaba marketplace home page: an editorial hero reading “Find pieces with a story” over a styled interior, a maker portrait panel, and a shop-by-collection grid for ceramics, textiles, jewellery and home goods',
+      width: 1513,
+      height: 1039,
+      frame: 'browser',
+    },
     tags: ['Marketplace', 'Real-time', 'Trilingual (RTL)'],
     problem:
       'A regional rental ecosystem fragmented across classifieds, social groups and offline agencies — no trust layer, no digital booking, and international platforms that support neither local payments nor full right-to-left localisation.',
@@ -278,6 +294,14 @@ export const projects: Project[] = [
     summary:
       'A production SaaS marketplace connecting service seekers with verified providers — intelligent job routing, a credit-based lead economy, Stripe-backed credit packs, real-time chat, and a full admin console with audit logging.',
     liveUrl: 'https://example.com',
+    screenshot: {
+      src: '/work/tradeloop.png',
+      alt:
+        'TradeLoop presentation board: the wholesale marketplace hero “Source smarter. Sell faster.” next to a laptop showing the curated product catalogue with category filters, price range and sustainability facets',
+      width: 1536,
+      height: 1024,
+      frame: 'plain',
+    },
     tags: ['Two-sided marketplace', 'Real-time', 'Credit economy'],
     problem:
       'Directory sites force seekers to cold-call strangers. Lead-gen platforms sell the same lead to five providers in a race to the bottom. Neither side gets accountability, transparent pricing, or dispute recourse.',
@@ -350,6 +374,14 @@ export const projects: Project[] = [
     summary:
       'A full-stack, multi-tenant SaaS platform for veterinary clinic management — appointments, medical records with dental charts, inventory, prescriptions, billing, team permissions, and analytics — with regionally tuned recurring subscriptions.',
     liveUrl: 'https://example.com',
+    screenshot: {
+      src: '/work/pawchart.png',
+      alt:
+        'PawChart site and product: a hero reading “Better care, beautifully coordinated” above the clinic dashboard with today’s appointments, new clients, follow-ups due, a patient timeline for a golden retriever and the day’s schedule',
+      width: 1024,
+      height: 1536,
+      frame: 'browser',
+    },
     tags: ['Vertical SaaS', 'Multi-tenant', 'Regional billing'],
     problem:
       'Veterinary clinics still juggle paper charts, spreadsheets, messaging apps and fragmented point-of-sale tools — while international practice-management products ignore regional payment rails, local-language UX and local currencies.',
@@ -465,6 +497,14 @@ export const projects: Project[] = [
     kind: 'SaaS',
     eyebrow: 'Project',
     summary: 'Curated co-founder matching with profile vetting, warm intros and async messaging.',
+    screenshot: {
+      src: '/work/cofoundhq.png',
+      alt:
+        'CofoundHQ landing page: a hero reading “Meet the person who builds it with you” beside three co-founder match cards showing profile, skills and a percentage match score',
+      width: 1513,
+      height: 1039,
+      frame: 'browser',
+    },
     tags: ['SaaS'],
     problem: 'Early-stage founders needed a structured way to match with technical co-founders.',
     outcome: 'Shipped a curated matching product with profile vetting, intros, and async messaging.',
@@ -478,6 +518,14 @@ export const projects: Project[] = [
     kind: 'Web application',
     eyebrow: 'Project',
     summary: 'One operations console replacing six spreadsheets for dispatch, invoicing and fleet tracking.',
+    screenshot: {
+      src: '/work/fleetdesk.png',
+      alt:
+        'FleetDesk operations console: a live map tracking eight vehicles across a city with route lines and ETAs, a vehicle status list, and tiles for deliveries today, average fuel level and a maintenance alert',
+      width: 1513,
+      height: 1039,
+      frame: 'browser',
+    },
     tags: ['Web application'],
     problem: 'Operations team was drowning in spreadsheets for dispatch, invoicing, and fleet tracking.',
     outcome:

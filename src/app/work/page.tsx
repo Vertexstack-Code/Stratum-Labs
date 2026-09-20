@@ -5,6 +5,7 @@ import { SectionHeader } from '@/components/ui/SectionHeader'
 import { Reveal } from '@/components/ui/Reveal'
 import { CtaBanner } from '@/components/sections/CtaBanner'
 import { ArrowRightIcon, ExternalLinkIcon } from '@/components/ui/Icons'
+import { ProjectShot } from '@/components/ui/ProjectShot'
 
 export const metadata = pageMetadata({
   title: 'Work',
@@ -29,6 +30,16 @@ export default function WorkPage() {
             {projects.map((project, index) => (
               <Reveal key={project.slug} delay={index * 60}>
                 <article className="card-hover flex h-full flex-col p-7">
+                  {project.screenshot ? (
+                    <ProjectShot
+                      {...project.screenshot}
+                      host={project.liveUrl ? new URL(project.liveUrl).hostname.replace('www.', '') : undefined}
+                      priority={index < 2}
+                      className="mb-6"
+                      sizes="(min-width: 768px) 45vw, 100vw"
+                    />
+                  ) : null}
+
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="tag-brand">{project.kind}</span>
                     {project.liveUrl ? (
